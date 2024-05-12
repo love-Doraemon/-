@@ -14,6 +14,7 @@ const routes = [
       {path: '/admin', name: 'admin',component:()=>import('../views/Manage/Admin')},
       {path:'/getdata',name:'getdata',component:()=>import('../views/Manage/GetData')},
       {path:'/wsdata',name:'wsdata',component:()=>import('../views/Manage/WsData')},
+      {path:'/postcom',name:'postcom',component:()=>import('../views/Manage/Postcom.vue')},
     ]
   },
   {
