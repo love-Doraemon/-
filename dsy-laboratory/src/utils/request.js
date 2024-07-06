@@ -3,7 +3,7 @@ import axios from 'axios'
 import router from '@/router'
 // 创建一个axios实例，设置基础URL和超时时间
 const request = axios.create({
-    baseURL:'http://10.17.57.87:9090', // 基础URL
+    baseURL:'http://localhost:9090', // 基础URL
     timeout:30000 // 超时时间
 })
 
