@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.apache.ibatis.annotations.Delete;
 import org.example.springboot.common.Result;
 import org.example.springboot.entity.User;
+import org.example.springboot.exception.ServiceException;
 import org.example.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,9 +36,17 @@ public class UserController {
 
     @DeleteMapping("/delete/{id}")
     public Result delete(@PathVariable Integer id){
+        User user=userService.getById(id);
+        if(user.getIsadministrator()){
+            throw new ServiceException("管理员不能删除");
+        }
         userService.removeById(id);
         return Result.success();
     }
+
+
+
+
 
     @DeleteMapping("/delete/batch")
     public Result deleteBatch(@RequestBody List<Integer> ids){

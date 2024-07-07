@@ -16,6 +16,10 @@
         <i class="el-icon-location"></i>
         <span slot="title">系统首页</span>
       </el-menu-item>
+      <el-menu-item index="/inform">
+        <i class="el-icon-location"></i>
+        <span slot="title">设备数据</span>
+      </el-menu-item>
       <el-submenu index="2">
         <template slot="title">
           <i class="el-icon-menu"></i>
@@ -38,7 +42,7 @@
         <i class="el-icon-document"></i>
         <span slot="title">导航三</span>
       </el-menu-item>
-      <el-menu-item index="/admin" v-if="user.isadministrator=== true">
+      <el-menu-item index="/user" v-if="user.isadministrator=== true">
         <i class="el-icon-setting"></i>
         <span slot="title">管理员界面</span>
       </el-menu-item>
@@ -52,7 +56,7 @@
           <el-menu-item index="/Alarm">get报警信息</el-menu-item>
           <el-menu-item index="/GetData">get遥测数据</el-menu-item>
           <el-menu-item index="/WsData">ws遥测数据</el-menu-item>
-          <el-menu-item index="1-2">post rpc命令</el-menu-item>
+          <el-menu-item index="/postcom">post rpc命令</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 
@@ -81,7 +85,7 @@
       <el-main>
         <router-view/>
       </el-main>
-      <el-footer>Footer</el-footer>
+<!--      <el-footer>Footer</el-footer>-->
     </el-container>
   </el-container>
   </div>

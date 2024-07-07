@@ -98,7 +98,7 @@ export default {
   },
   methods: {
     load(entityType,entityId){
-      
+
       axios.get(`http://101.35.53.92:8080/api/plugins/telemetry/${entityType}/${entityId}/values/timeseries`,{
         headers: {
          'Authorization': 'Bearer ' + this.token1
